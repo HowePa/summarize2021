@@ -9,7 +9,7 @@ author: howepa
 github: howepa
 
 # theme: 'jekyll-theme-persephone'
-remote_theme: "erlzhang/jekyll-theme-persephone"
+remote_theme: https://github.com/erlzhang/jekyll-theme-persephone
 logo: /img/homepage.svg
 markdown: kramdown
 
