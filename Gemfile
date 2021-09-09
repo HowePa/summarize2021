@@ -1,15 +1,15 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.2.0"
+# gem "jekyll", "~> 4.2.0"
 # gem "minima", "~> 2.5"
-gem "jekyll-theme-persephone"
-# gem "github-pages", group: :jekyll_plugins
+# gem "jekyll-theme-persephone"
+gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
-gem "jekyll-remote-theme"
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem 'jekyll-books'
-end
+# gem "jekyll-remote-theme"
+# group :jekyll_plugins do
+#   gem "jekyll-feed", "~> 0.12"
+#   gem 'jekyll-books'
+# end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
