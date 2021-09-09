@@ -1,3 +1,6 @@
+---
+sort: 7
+---
 # 背包问题（ Knapsack Problem ）
 
 ## 问题描述

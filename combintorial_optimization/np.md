@@ -1,3 +1,6 @@
+---
+sort: 1
+---
 # NP-hard
 
 - **P类问题**（polynominal）：存在多项式时间算法的问题。    

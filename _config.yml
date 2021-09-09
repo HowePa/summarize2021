@@ -4,15 +4,15 @@ email: howepa287@gmail.com
 baseurl: "" 
 url: "" 
 author: howepa
+social:
+  github: howepa
 
-# social:
-github: howepa
+remote_theme: rundocs/jekyll-rtd-theme
 
-# theme: 'jekyll-theme-persephone'
-remote_theme: https://github.com/erlzhang/jekyll-theme-persephone
-logo: /img/homepage.svg
 markdown: kramdown
 
+readme_index:
+  with_frontmatter: true
+
 plugins:
-  - jekyll-feed
   - jekyll-remote-theme

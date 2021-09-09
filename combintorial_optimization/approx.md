@@ -1,3 +1,6 @@
+---
+sort: 2
+---
 # 近似算法（Approximation Algorithms)   
 
 解决NP-hard问题有三种方法：   

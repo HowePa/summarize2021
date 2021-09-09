@@ -1,3 +1,6 @@
+---
+sort: 6
+---
 # 最大独立集（ Maximum Independent Set ）
 
 ## 问题描述

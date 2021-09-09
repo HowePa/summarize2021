@@ -1,3 +1,6 @@
+---
+sort: 5
+---
 # 布尔可满足性问题（ Boolean Satisfiability ）
 
 ## 问题描述
