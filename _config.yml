@@ -11,10 +11,11 @@ github: howepa
 # Build settings
 # theme: minima
 
-theme: 'jekyll-theme-persephone'
-# remote_theme: erlzhang/jekyll-theme-persephone
-logo: /img/homepage.svg
-markdown: kramdown
-
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
+  
+# theme: 'jekyll-theme-persephone'
+remote_theme: erlzhang/jekyll-theme-persephone
+logo: /img/homepage.svg
+markdown: kramdown
