@@ -10,7 +10,8 @@ github: howepa
 
 # Build settings
 # theme: minima
-theme: jekyll-theme-persephone
+
+theme: 'jekyll-theme-persephone'
 # remote_theme: erlzhang/jekyll-theme-persephone
 logo: /img/homepage.svg
 markdown: kramdown
