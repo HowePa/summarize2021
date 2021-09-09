@@ -4,6 +4,8 @@ remote_theme: rundocs/jekyll-rtd-theme
 
 markdown: kramdown
 
+baseurl: "summarize2021"
+
 readme_index:
   with_frontmatter: true
 
