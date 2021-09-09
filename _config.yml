@@ -1,0 +1,19 @@
+title: Home
+# description: description
+email: howepa287@gmail.com
+baseurl: "" 
+url: "" 
+author: howepa
+
+# social:
+github: howepa
+
+# Build settings
+# theme: minima
+theme: jekyll-theme-persephone
+# remote_theme: erlzhang/jekyll-theme-persephone
+logo: /img/homepage.svg
+markdown: kramdown
+
+plugins:
+  - jekyll-feed

@@ -1,0 +1,37 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ site.author.name }}">
+    {%- include title.html -%}
+    {{ site.head_code }}
+    <meta name="keywords" content="{{ page.keywords }}">
+    <meta name="description" content="{{ page.description }}">
+    {%- include assets.html -%}
+    {%- if site.rss %}
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.rss }}" />
+    {% endif -%}
+    <!-- math support -->
+    <script type="text/x-mathjax-config">
+        var mathId = document.getElementById("post-content");
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath:  [ ["$", "$"], ["\\(","\\)"] ],
+                displayMath: [ ["$$", "$$"], ["\\[","\\]"] ],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+            },
+            "HTML-CSS": {
+                availableFonts: ["STIX","TeX"],
+                showMathMenu: false,
+                showProcessingMessages: false,
+                messageStyle: "none"
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,mathId]);
+    </script>
+    
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <style type="text/css">
+        .MathJax span{font-size:18px;}
+    </style>
+
+</head>
