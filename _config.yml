@@ -1,11 +1,4 @@
-title: Home
-# description: description
-email: howepa287@gmail.com
-baseurl: "" 
-url: "" 
-author: howepa
-social:
-  github: howepa
+title: Summarize
 
 remote_theme: rundocs/jekyll-rtd-theme
 
