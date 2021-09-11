@@ -13,11 +13,60 @@ sort: 2
 暴力搜索的解决方案就是尝试所有排列（有序组合），看看哪一条路径的权值最小。这种方法的时间复杂度是$$O(n!)$$，即城市数量的阶乘，因此这个解决方案即使对于只有20个城市的问题实例也不切实际。    
 ### Held-Karp算法
 Held-Karp算法是一种基于动态规划的算法，算法每一步都计算所有点是最后一个点的可能性，且每一步都以来前一步的结果。  
-> 将城市按照\\(1,2,...,n\\)标记，其中1表示起始城市。对于城市集合\\(S \subseteq \lbrace 2,...n \rbrace\\)的所有子集，计算从城市\\(1\\)到城市\\(e \neq 1 \wedge e \notin S\\)经过\\(S\\)中所有城市的路径的最短路径，路径长度计为\\(g(S,e)\\)，\\(d(u,v)\\)表示从u到v的直接距离，计算从最小的子集开始扩展到最大的子集。   
+> 将城市按照\\(1,2,...,n\\)标记，其中$$1$$表示起始城市。对于城市集合\\(S \subseteq \lbrace 2,...n \rbrace\\)的所有子集，计算从城市\\(1\\)到城市\\(e \neq 1 \wedge e \notin S\\)经过\\(S\\)中所有城市的路径的最短路径，路径长度计为\\(g(S,e)\\)，\\(d(u,v)\\)表示从$$u$$到$$v$$的直接距离，计算从最小的子集开始扩展到最大的子集。   
 例如：\\(g(\emptyset,e)=d(1,e)\\), \\(g(\lbrace 2\rbrace,3)=len(1\rightarrow 2\rightarrow 3)\\), \\(g(\lbrace 2,3\rbrace,4)=min(len(1\rightarrow 2\rightarrow 3\rightarrow 4),len(1\rightarrow 3\rightarrow 2\rightarrow 4))\\)  
-对于k个可能的最短路径存在：\\[ g(S,e)=\min_{1\leqslant i \leqslant k}g(S_i, s_i)+ d(s_i, e). \\]  
+对于$$k$$个可能的最短路径存在：\\[ g(S,e)=\min_{1\leqslant i \leqslant k}g(S_i, s_i)+ d(s_i, e). \\]  
 
-该算法的时间复杂度为\\( O(n^22^n) \\)。
+该算法的时间复杂度为\\( O(n^22^n) \\)，空间复杂度为\\( O(2^nn) \\)。
+
+    def held_karp(dists):
+        """
+        Implementation of Held-Karp, an algorithm that solves the Traveling
+        Salesman Problem using dynamic programming with memoization.
+        Parameters:
+            dists: distance matrix
+        Returns:
+            A tuple, (cost, path).
+        """
+        n = len(dists)
+        C = {}
+
+        for k in range(1, n):
+            C[(1 << k, k)] = (dists[0][k], 0)
+            
+        for subset_size in range(2, n):
+            for subset in itertools.combinations(range(1, n), subset_size):
+                bits = 0
+                for bit in subset:
+                    bits |= 1 << bit
+
+                for k in subset:
+                    prev = bits & ~(1 << k)
+
+                    res = []
+                    for m in subset:
+                        if m == 0 or m == k:
+                            continue
+                        res.append((C[(prev, m)][0] + dists[m][k], m))
+                    C[(bits, k)] = min(res)
+
+        bits = (2**n - 1) - 1
+
+        res = []
+        for k in range(1, n):
+            res.append((C[(bits, k)][0] + dists[k][0], k))
+        opt, parent = min(res)
+
+        path = []
+        for i in range(n - 1):
+            path.append(parent)
+            new_bits = bits & ~(1 << parent)
+            _, parent = C[(bits, parent)]
+            bits = new_bits
+
+        path.append(0)
+
+        return opt, list(reversed(path))
 
 ## 近似算法   
 
