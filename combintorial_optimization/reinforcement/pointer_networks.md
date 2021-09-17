@@ -18,12 +18,3 @@ sort: 1
 ### Sequence-to-Sequence
 Sequence-to-Sequence(Seq2Seq)模型实现了把一个序列转换成另一个序列的功能，并且**不要求输入序列和输出序列等长**。
 
-
-```note
-@inproceedings{Vinyals2015PointerN,  
-  title={Pointer Networks},  
-  author={Oriol Vinyals and Meire Fortunato and Navdeep Jaitly},  
-  booktitle={NIPS},  
-  year={2015}  
-}  
-```

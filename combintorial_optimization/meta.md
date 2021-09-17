@@ -43,6 +43,6 @@ sort: 3
 
 在这个元启发式算法中，通过局部搜索机制提供强化，通过使用禁忌表提供多样化。   
 
-![Tabu Search](..\img\combinatorial_optimization\tsp_ts.png)
+![Tabu Search](..\img\combinatorial_optimization\tsp_ts.jpg)
 ## 参考文献
 [1] Bianchi, L., M. Dorigo, L. Gambardella and W. Gutjahr. “A survey on metaheuristics for stochastic combinatorial optimization.” Natural Computing 8 (2008): 239-287.

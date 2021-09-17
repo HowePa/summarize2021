@@ -1,5 +1,5 @@
 ---
-sort: 2
+sort: 3
 ---
 # Neural Combinatorial Optimization With Reinforcement Learning
 
